@@ -25,14 +25,14 @@
             <feature name="pruebita">
 
                 <!--el name param es siempre asi. en value debe ir la ruta de la clase pero separadas con puntos-->
-                <param name="android-package"     value="com.paredesivan.plugin.Prueba"/>
+                <param name="android-package"     value="com.paredesivan.prueba.Prueba"/>
 
             </feature>
 
         </config-file>
 
         <!--ruta del archivo origen java         y carpeta destino una vez que se agrega el plugin-->
-        <source-file src="src/android/Prueba.java" target-dir="src/com/paredesivan/plugin/"/>
+        <source-file src="src/android/Prueba.java" target-dir="src/com/paredesivan/prueba/"/>
 
         <!--si agrego otro podría guardarse en la misma carpeta-->
         <!--<source-file src="src/android/Prueba3.java" target-dir="src/com/paredesivan/plugin/" />-->

@@ -1,6 +1,6 @@
 
 //en packpage debe ir la ruta donde se encuentra este archivo, pero separada por puntos
-package com.paredesivan.plugin;
+package com.paredesivan.prueba;
 
 //esos 3 van si o si
 import org.json.JSONArray;  //obligatorio
