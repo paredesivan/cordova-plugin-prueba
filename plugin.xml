@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-        id="com.example.prueba"
+<!--el id es el nombre con el que figurara en la carpeta plugins-->
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-prueba"
         version="0.1.0">
 
     <!--nombre del plugin-->
     <name>Prueba de un plugin</name>
 
-    <engines>
-        <engine name="cordova" version=">=3.4.0"/>
-    </engines>
+    <!--ubicacion de archivo js.   en name puede ir cualquier cosa-->
+    <js-module src="www/prueba.js" name="pruebaloca">
 
-    <asset src="www/prueba.js" target="js/prueba.js"/>
-
-    <!--ubicacion de archivo js-->
-    <js-module src="www/prueba.js" name="prueba">
-        <!--este es el nombre con el que lo llamare desde el controlador/servicio-->
+        <!--target es el nombre con el que se llama el plugin desde el controlador/servicio-->
         <clobbers target="prueba"/>
     </js-module>
-
 
     <!--plataforma-->
     <platform name="android">
@@ -26,18 +21,21 @@
         <!--ubicacion de archivo xml-->
         <config-file target="res/xml/config.xml" parent="/*">
 
-            <!--nombre del servicio. que debe ser igual al nombre del servicio en la funcion exec del js-->
-            <feature name="Prueba">
+            <!--nombre del servicio. DEBE ser igual al nombre del servicio en la funcion exec del js-->
+            <feature name="pruebita">
 
-                <!--param es siempre asi-->
-                <param name="android-package" value="com.example.plugin.Prueba"/>
+                <!--el name param es siempre asi. en value debe ir la ruta de la clase pero separadas con puntos-->
+                <param name="android-package"     value="com.paredesivan.plugin.Prueba"/>
 
             </feature>
+
         </config-file>
 
-        <!--ruta del archivo de java y destino una vez que se agrega el plugin. el target dir tiene que coincidir con el
-         del packete java-->
-        <source-file src="src/android/Prueba.java" target-dir="src/com/example/plugin/" />
+        <!--ruta del archivo origen java         y carpeta destino una vez que se agrega el plugin-->
+        <source-file src="src/android/Prueba.java" target-dir="src/com/paredesivan/plugin/"/>
+
+        <!--si agrego otro podría guardarse en la misma carpeta-->
+        <!--<source-file src="src/android/Prueba3.java" target-dir="src/com/paredesivan/plugin/" />-->
 
     </platform>
 
