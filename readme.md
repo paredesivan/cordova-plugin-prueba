@@ -1,8 +1,10 @@
-para agregar el plugin usar
-cordova plugin add https://github.com/paredesivan/cordova-plugin-prueba
+para agregar el plugin usar:
 
-para remover el plugin
-cordova plugin rm cordova-plugin-prueba
+        cordova plugin add https://github.com/paredesivan/cordova-plugin-prueba
+
+para remover el plugin:
+
+        cordova plugin rm cordova-plugin-prueba
 
 saludar :muestra un alert con el saludo. ejemplo:
 
