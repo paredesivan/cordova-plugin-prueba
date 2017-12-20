@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="ar.com.prueba"
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.example.prueba"
         version="0.1.0">
 
     <!--nombre del plugin-->
     <name>Prueba de un plugin</name>
 
+    <engines>
+        <engine name="cordova" version=">=3.4.0"/>
+    </engines>
+
+    <asset src="www/prueba.js" target="js/prueba.js"/>
+
     <!--ubicacion de archivo js-->
-    <js-module src="www/prueba.js" name="archivoDePrueba">
-        <merges target="prueba" />
+    <js-module src="www/prueba.js" name="prueba">
+        <!--este es el nombre con el que lo llamare desde el controlador/servicio-->
+        <clobbers target="prueba"/>
     </js-module>
 
 
@@ -20,15 +27,17 @@
         <config-file target="res/xml/config.xml" parent="/*">
 
             <!--nombre del servicio. que debe ser igual al nombre del servicio en la funcion exec del js-->
-            <feature name="prueba">
+            <feature name="Prueba">
 
                 <!--param es siempre asi-->
-                <param name="android-package" value="ar.com.prueba"/>
+                <param name="android-package" value="com.example.plugin.Prueba"/>
+
             </feature>
         </config-file>
 
-        <!--ruta del archivo de java y destino una vez que se agrega el plugin-->
-        <source-file src="src/android/prueba.java" target-dir="src/ar/com/prueba" />
+        <!--ruta del archivo de java y destino una vez que se agrega el plugin. el target dir tiene que coincidir con el
+         del packete java-->
+        <source-file src="src/android/Prueba.java" target-dir="src/com/example/plugin/" />
 
     </platform>
 
